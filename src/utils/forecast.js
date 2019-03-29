@@ -14,15 +14,17 @@ const forecast = (latitude, longitude, callback) => {
                  + ', Error - ' + response.body.error, undefined);
         }
         else {
-            console.log('It is currently ' + response.body.currently.temperature + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.');
+            console.log('It is currently ' + response.body.currently.temperature
+                + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.');
             callback(
                 undefined,
-                response.body.daily.data[0].summary + 
-              " It is currently " +
-                response.body.currently.temperature +
-                " degress out. There is a " +
-                response.body.currently.precipProbability +
-                "% chance of rain."
+                response.body.daily.data[0].summary
+                + " It is currently "
+                + response.body.currently.temperature
+                + " degress out. The hight today is " + body.daily.data[0].temperatureHigh
+                + " with a log of " + body.daily.data[0].temperatureLow
+                + ". There is a " + response.body.currently.precipProbability
+                + "% chance of rain."
             );
     }
 
